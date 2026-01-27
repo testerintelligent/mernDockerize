@@ -7,14 +7,14 @@ function App() {
 
   // Fetch items from the backend
   useEffect(() => {
-    axios.get('http://localhost:5000/api/items')
+    axios.get('http://localhost:5001/api/items')
       .then(response => setItems(response.data))
       .catch(error => console.log(error));
   }, []);
 
   // Add new item
   const addItem = () => {
-    axios.post('http://localhost:5000/api/items', { name })
+    axios.post('http://localhost:5001/api/items', { name })
       .then(response => {
         setItems([...items, response.data]);
         setName('');
