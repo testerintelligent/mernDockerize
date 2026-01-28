@@ -20,7 +20,7 @@ FROM nginx:alpine
 #copy the build folder to the nginx html folder
 COPY --from=build /app/build /usr/share/nginx/html
 
-EXPOSE 80
+EXPOSE 81
 
 
 
