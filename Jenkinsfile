@@ -16,9 +16,9 @@ pipeline {
                 script {
                     sh """
                      echo "Disconnect the docker Network" |
-                        docker network disconnect merndockerize_default merndockerize-frontend-1
-                        docker network disconnect merndockerize_mern-network merndockerize-backend-1
-                        docker network disconnect merndockerize_mern-network merndockerize-mongo-1
+                        sudo -S docker network disconnect merndockerize_default merndockerize-frontend-1
+                        sudo -S docker network disconnect merndockerize_mern-network merndockerize-backend-1
+                        sudo -Sdocker network disconnect merndockerize_mern-network merndockerize-mongo-1
                      echo "Down the docker Container" |
                      sudo -S docker-compose down
                      sudo docker-compose up --build -d
