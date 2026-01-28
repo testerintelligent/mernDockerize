@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 // Connect to MongoDB
-mongoose.connect('mongodb://mongo:27018/mern-docker')
+mongoose.connect('mongodb://mongo:27017/mern-docker')
   .then(() => console.log('Connected to MongoDB'))
   .catch((err) => console.log(err));
 
