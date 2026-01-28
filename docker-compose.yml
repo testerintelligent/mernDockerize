@@ -12,7 +12,7 @@
       build: 
         context: ./frontend
       ports:
-        - "8000:80"
+        - "8001:80"
     
     mongo:
       image: mongo:latest
