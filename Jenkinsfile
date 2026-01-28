@@ -15,12 +15,13 @@ pipeline {
             steps {
                 script {
                     sh """
+                     echo "Down the docker Container" |
+                     sudo -S docker-compose down
                      echo "Disconnect the docker Network" |
                         sudo -S docker network disconnect merndockerize_default merndockerize-frontend-1
                         sudo -S docker network disconnect merndockerize_mern-network merndockerize-backend-1
                         sudo -Sdocker network disconnect merndockerize_mern-network merndockerize-mongo-1
-                     echo "Down the docker Container" |
-                     sudo -S docker-compose down
+                        echo "Build and up the docker Container" |
                      sudo docker-compose up --build -d
                     """
                 }
