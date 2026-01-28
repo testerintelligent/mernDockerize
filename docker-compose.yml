@@ -16,9 +16,6 @@
     
     mongo:
       image: mongo:latest
-      command: mongodb --port 27018
-      profiles:
-      - debug  # <--- This container is now EXCLUDED by default
       ports:
         - "27018:27017"
       networks:
